@@ -1,10 +1,13 @@
 package com.gokul.productservice.controller;
 
 import com.gokul.productservice.dto.ProductRequest;
+import com.gokul.productservice.dto.ProductResponse;
 import com.gokul.productservice.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/product")
@@ -21,4 +24,7 @@ public class ProductController {
     }
 
 
+    public List<ProductResponse> getAllProducts(){
+        return productService.getAllProducts();
+    }
 }
